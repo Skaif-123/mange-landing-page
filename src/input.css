@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+    --color-brightRed: oklch(0.561 0.217 27.51);
+    --color-brightRedLight: oklch(0.677 0.202 27.66);
+    --color-brightRedSupLight: oklch(0.949 0.048 28.03);
+    --color-darkBlue: oklch(0.269 0.049 264.14);
+    --color-darkGrayishBlue: oklch(0.618 0.029 263.25);
+    --color-veryDarkBlue: oklch(0.136 0.018 267.67);
+    --color-veryPaleRed: oklch(0.964 0.049 29.45);
+    --color-veryLightGray: oklch(0.985 0 0);
+}
+
+body {
+    background-image: url('../img/bg-tablet-pattern.svg');
+    background-repeat: no-repeat;
+    background-size: 800px;
+    background-position: 90% -25%;
+  }
+  
+  #cta {
+    background-image: url('../img/bg-simplify-section-desktop.svg');
+    background-repeat: no-repeat;
+  }
+  
+  @media (max-width: 576px) {
+    body {
+      background-position: 50px -50px;
+      background-size: 500px;
+    }
+  
+    #cta {
+      background-image: url('../img/bg-simplify-section-mobile.svg');
+    }
+  }
+  
+  /* Hamburger Menu */
+  .hamburger {
+    /* Existing styles */
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+    
+    /* Add these */
+    padding: 0;
+    border: none;
+    background: none;
+  }
+  
+  .hamburger-top,
+  .hamburger-middle,
+  .hamburger-bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+  }
+  
+  .hamburger-middle {
+    transform: translateY(7px);
+  }
+  
+  .hamburger-bottom {
+    transform: translateY(14px);
+  }
+  
+  .open {
+    transform: rotate(90deg);
+    transform: translateY(0px);
+  }
+  
+  .open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translate(6px);
+  }
+  
+  .open .hamburger-middle {
+    display: none;
+  }
+  
+  .open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
+  }
+  
